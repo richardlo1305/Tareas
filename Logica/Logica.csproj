@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dtos\Modelos.csproj" />
+    <ProjectReference Include="..\Modelos\Modelos.csproj" />
     <ProjectReference Include="..\EntityFramework\EntityFramework.csproj" />
   </ItemGroup>
 

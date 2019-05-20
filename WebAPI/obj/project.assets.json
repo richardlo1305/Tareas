@@ -4446,8 +4446,8 @@
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.1.0",
-          "C:\\Users\\User\\source\\repos\\Pruebas\\Dtos\\Modelos.csproj": "1.0.0",
           "EntityFramework": "1.0.0",
+          "Modelos": "1.0.0",
           "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
@@ -4455,6 +4455,16 @@
         },
         "runtime": {
           "bin/placeholder/Logica.dll": {}
+        }
+      },
+      "Modelos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Modelos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modelos.dll": {}
         }
       }
     }
@@ -12045,6 +12055,11 @@
       "type": "project",
       "path": "../Logica/Logica.csproj",
       "msbuildProject": "../Logica/Logica.csproj"
+    },
+    "Modelos/1.0.0": {
+      "type": "project",
+      "path": "../Modelos/Modelos.csproj",
+      "msbuildProject": "../Modelos/Modelos.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -12064,11 +12079,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\Pruebas\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Repositorios\\Tareas\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\User\\source\\repos\\Pruebas\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Repositorios\\Tareas\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\Pruebas\\WebAPI\\obj\\",
+      "outputPath": "C:\\Repositorios\\Tareas\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12087,8 +12102,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\User\\source\\repos\\Pruebas\\Logica\\Logica.csproj": {
-              "projectPath": "C:\\Users\\User\\source\\repos\\Pruebas\\Logica\\Logica.csproj"
+            "C:\\Repositorios\\Tareas\\Logica\\Logica.csproj": {
+              "projectPath": "C:\\Repositorios\\Tareas\\Logica\\Logica.csproj"
             }
           }
         }
@@ -12135,16 +12150,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "No se encuentra el proyecto \"C:\\Users\\User\\source\\repos\\Pruebas\\Dtos\\Modelos.csproj\". Compruebe que la referencia al proyecto sea válida y que exista el archivo de proyecto.",
-      "libraryId": "C:\\Users\\User\\source\\repos\\Pruebas\\Dtos\\Modelos.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    }
-  ]
+  }
 }

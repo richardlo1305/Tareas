@@ -857,6 +857,16 @@
         "runtime": {
           "bin/placeholder/EntityFramework.dll": {}
         }
+      },
+      "Modelos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Modelos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modelos.dll": {}
+        }
       }
     }
   },
@@ -3340,14 +3350,19 @@
       "type": "project",
       "path": "../EntityFramework/EntityFramework.csproj",
       "msbuildProject": "../EntityFramework/EntityFramework.csproj"
+    },
+    "Modelos/1.0.0": {
+      "type": "project",
+      "path": "../Modelos/Modelos.csproj",
+      "msbuildProject": "../Modelos/Modelos.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 6.1.0",
-      "C:\\Users\\User\\source\\repos\\Pruebas\\Dtos\\Modelos.csproj",
       "EntityFramework >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0",
+      "Modelos >= 1.0.0",
       "Newtonsoft.Json >= 12.0.2"
     ]
   },
@@ -3358,11 +3373,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\Pruebas\\Logica\\Logica.csproj",
+      "projectUniqueName": "C:\\Repositorios\\Tareas\\Logica\\Logica.csproj",
       "projectName": "Logica",
-      "projectPath": "C:\\Users\\User\\source\\repos\\Pruebas\\Logica\\Logica.csproj",
+      "projectPath": "C:\\Repositorios\\Tareas\\Logica\\Logica.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\Pruebas\\Logica\\obj\\",
+      "outputPath": "C:\\Repositorios\\Tareas\\Logica\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3381,11 +3396,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\User\\source\\repos\\Pruebas\\Dtos\\Modelos.csproj": {
-              "projectPath": "C:\\Users\\User\\source\\repos\\Pruebas\\Dtos\\Modelos.csproj"
+            "C:\\Repositorios\\Tareas\\EntityFramework\\EntityFramework.csproj": {
+              "projectPath": "C:\\Repositorios\\Tareas\\EntityFramework\\EntityFramework.csproj"
             },
-            "C:\\Users\\User\\source\\repos\\Pruebas\\EntityFramework\\EntityFramework.csproj": {
-              "projectPath": "C:\\Users\\User\\source\\repos\\Pruebas\\EntityFramework\\EntityFramework.csproj"
+            "C:\\Repositorios\\Tareas\\Modelos\\Modelos.csproj": {
+              "projectPath": "C:\\Repositorios\\Tareas\\Modelos\\Modelos.csproj"
             }
           }
         }
@@ -3421,16 +3436,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "No se encuentra el proyecto \"C:\\Users\\User\\source\\repos\\Pruebas\\Dtos\\Modelos.csproj\". Compruebe que la referencia al proyecto sea válida y que exista el archivo de proyecto.",
-      "libraryId": "C:\\Users\\User\\source\\repos\\Pruebas\\Dtos\\Modelos.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    }
-  ]
+  }
 }

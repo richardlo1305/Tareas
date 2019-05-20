@@ -1,0 +1,14 @@
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\PruebasUnitarias.deps.json
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\PruebasUnitarias.runtimeconfig.json
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\PruebasUnitarias.runtimeconfig.dev.json
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\PruebasUnitarias.dll
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\PruebasUnitarias.pdb
+C:\Repositorios\Tareas\PruebasUnitarias\obj\Debug\netcoreapp2.1\PruebasUnitarias.csprojAssemblyReference.cache
+C:\Repositorios\Tareas\PruebasUnitarias\obj\Debug\netcoreapp2.1\PruebasUnitarias.csproj.CoreCompileInputs.cache
+C:\Repositorios\Tareas\PruebasUnitarias\obj\Debug\netcoreapp2.1\PruebasUnitarias.AssemblyInfoInputs.cache
+C:\Repositorios\Tareas\PruebasUnitarias\obj\Debug\netcoreapp2.1\PruebasUnitarias.AssemblyInfo.cs
+C:\Repositorios\Tareas\PruebasUnitarias\obj\Debug\netcoreapp2.1\PruebasUnitarias.dll
+C:\Repositorios\Tareas\PruebasUnitarias\obj\Debug\netcoreapp2.1\PruebasUnitarias.pdb

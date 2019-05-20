@@ -7,3 +7,12 @@ c:\Users\User\source\repos\WebAPI\Dtos\obj\Debug\netcoreapp2.1\Modelos.AssemblyI
 c:\Users\User\source\repos\WebAPI\Dtos\obj\Debug\netcoreapp2.1\Modelos.AssemblyInfo.cs
 c:\Users\User\source\repos\WebAPI\Dtos\obj\Debug\netcoreapp2.1\Modelos.dll
 c:\Users\User\source\repos\WebAPI\Dtos\obj\Debug\netcoreapp2.1\Modelos.pdb
+C:\Repositorios\Tareas\Modelos\bin\Debug\netcoreapp2.1\Modelos.deps.json
+C:\Repositorios\Tareas\Modelos\bin\Debug\netcoreapp2.1\Modelos.dll
+C:\Repositorios\Tareas\Modelos\bin\Debug\netcoreapp2.1\Modelos.pdb
+C:\Repositorios\Tareas\Modelos\obj\Debug\netcoreapp2.1\Modelos.csprojAssemblyReference.cache
+C:\Repositorios\Tareas\Modelos\obj\Debug\netcoreapp2.1\Modelos.csproj.CoreCompileInputs.cache
+C:\Repositorios\Tareas\Modelos\obj\Debug\netcoreapp2.1\Modelos.AssemblyInfoInputs.cache
+C:\Repositorios\Tareas\Modelos\obj\Debug\netcoreapp2.1\Modelos.AssemblyInfo.cs
+C:\Repositorios\Tareas\Modelos\obj\Debug\netcoreapp2.1\Modelos.dll
+C:\Repositorios\Tareas\Modelos\obj\Debug\netcoreapp2.1\Modelos.pdb

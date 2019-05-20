@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\Pruebas\\Modelos\\Modelos.csproj",
+      "projectUniqueName": "C:\\Repositorios\\Tareas\\Modelos\\Modelos.csproj",
       "projectName": "Modelos",
-      "projectPath": "C:\\Users\\User\\source\\repos\\Pruebas\\Modelos\\Modelos.csproj",
+      "projectPath": "C:\\Repositorios\\Tareas\\Modelos\\Modelos.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\Pruebas\\Modelos\\obj\\",
+      "outputPath": "C:\\Repositorios\\Tareas\\Modelos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

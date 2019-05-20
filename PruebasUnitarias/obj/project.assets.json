@@ -5805,11 +5805,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\Pruebas\\PruebasUnitarias\\PruebasUnitarias.csproj",
+      "projectUniqueName": "C:\\Repositorios\\Tareas\\PruebasUnitarias\\PruebasUnitarias.csproj",
       "projectName": "PruebasUnitarias",
-      "projectPath": "C:\\Users\\User\\source\\repos\\Pruebas\\PruebasUnitarias\\PruebasUnitarias.csproj",
+      "projectPath": "C:\\Repositorios\\Tareas\\PruebasUnitarias\\PruebasUnitarias.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\Pruebas\\PruebasUnitarias\\obj\\",
+      "outputPath": "C:\\Repositorios\\Tareas\\PruebasUnitarias\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
