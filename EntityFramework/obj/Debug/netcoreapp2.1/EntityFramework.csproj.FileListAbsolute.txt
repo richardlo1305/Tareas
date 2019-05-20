@@ -1,0 +1,8 @@
+c:\Users\User\source\repos\WebAPI\EntityFramework\bin\Debug\netcoreapp2.1\EntityFramework.deps.json
+c:\Users\User\source\repos\WebAPI\EntityFramework\bin\Debug\netcoreapp2.1\EntityFramework.dll
+c:\Users\User\source\repos\WebAPI\EntityFramework\obj\Debug\netcoreapp2.1\EntityFramework.csproj.CoreCompileInputs.cache
+c:\Users\User\source\repos\WebAPI\EntityFramework\obj\Debug\netcoreapp2.1\EntityFramework.AssemblyInfoInputs.cache
+c:\Users\User\source\repos\WebAPI\EntityFramework\obj\Debug\netcoreapp2.1\EntityFramework.AssemblyInfo.cs
+c:\Users\User\source\repos\WebAPI\EntityFramework\bin\Debug\netcoreapp2.1\EntityFramework.pdb
+c:\Users\User\source\repos\WebAPI\EntityFramework\obj\Debug\netcoreapp2.1\EntityFramework.dll
+c:\Users\User\source\repos\WebAPI\EntityFramework\obj\Debug\netcoreapp2.1\EntityFramework.pdb

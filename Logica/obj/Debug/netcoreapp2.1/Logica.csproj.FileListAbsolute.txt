@@ -1,0 +1,14 @@
+c:\Users\User\source\repos\WebAPI\Logica\bin\Debug\netcoreapp2.1\EntityFramework.dll
+c:\Users\User\source\repos\WebAPI\Logica\obj\Debug\netcoreapp2.1\Logica.csprojAssemblyReference.cache
+c:\Users\User\source\repos\WebAPI\Logica\obj\Debug\netcoreapp2.1\Logica.csproj.CoreCompileInputs.cache
+c:\Users\User\source\repos\WebAPI\Logica\obj\Debug\netcoreapp2.1\Logica.AssemblyInfoInputs.cache
+c:\Users\User\source\repos\WebAPI\Logica\obj\Debug\netcoreapp2.1\Logica.AssemblyInfo.cs
+c:\Users\User\source\repos\WebAPI\Logica\bin\Debug\netcoreapp2.1\Logica.deps.json
+c:\Users\User\source\repos\WebAPI\Logica\bin\Debug\netcoreapp2.1\Logica.dll
+c:\Users\User\source\repos\WebAPI\Logica\bin\Debug\netcoreapp2.1\Logica.pdb
+c:\Users\User\source\repos\WebAPI\Logica\bin\Debug\netcoreapp2.1\EntityFramework.pdb
+c:\Users\User\source\repos\WebAPI\Logica\obj\Debug\netcoreapp2.1\Logica.csproj.CopyComplete
+c:\Users\User\source\repos\WebAPI\Logica\obj\Debug\netcoreapp2.1\Logica.dll
+c:\Users\User\source\repos\WebAPI\Logica\obj\Debug\netcoreapp2.1\Logica.pdb
+c:\Users\User\source\repos\WebAPI\Logica\bin\Debug\netcoreapp2.1\Modelos.dll
+c:\Users\User\source\repos\WebAPI\Logica\bin\Debug\netcoreapp2.1\Modelos.pdb

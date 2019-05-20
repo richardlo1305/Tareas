@@ -1,0 +1,9 @@
+c:\Users\User\source\repos\WebAPI\Dtos\bin\Debug\netcoreapp2.1\Modelos.deps.json
+c:\Users\User\source\repos\WebAPI\Dtos\bin\Debug\netcoreapp2.1\Modelos.dll
+c:\Users\User\source\repos\WebAPI\Dtos\bin\Debug\netcoreapp2.1\Modelos.pdb
+c:\Users\User\source\repos\WebAPI\Dtos\obj\Debug\netcoreapp2.1\Modelos.csprojAssemblyReference.cache
+c:\Users\User\source\repos\WebAPI\Dtos\obj\Debug\netcoreapp2.1\Modelos.csproj.CoreCompileInputs.cache
+c:\Users\User\source\repos\WebAPI\Dtos\obj\Debug\netcoreapp2.1\Modelos.AssemblyInfoInputs.cache
+c:\Users\User\source\repos\WebAPI\Dtos\obj\Debug\netcoreapp2.1\Modelos.AssemblyInfo.cs
+c:\Users\User\source\repos\WebAPI\Dtos\obj\Debug\netcoreapp2.1\Modelos.dll
+c:\Users\User\source\repos\WebAPI\Dtos\obj\Debug\netcoreapp2.1\Modelos.pdb
