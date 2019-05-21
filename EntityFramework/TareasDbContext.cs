@@ -9,11 +9,16 @@ namespace EntityFramework
         {
         }
 
-        public DbSet<Tarea> Tareas { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Tarea> Tarea { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Usuario>().HasKey(t => t.Codigo);
+            modelBuilder.Entity<Tarea>().HasKey(t => t.Codigo);
+            modelBuilder.Entity<Tarea>().Property(t => t.Codigo).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Usuario>().Property(t => t.Codigo).ValueGeneratedOnAdd();
+
             modelBuilder.Entity<Usuario>()
                 .Property(t => t.Identificacion)
                 .IsRequired();

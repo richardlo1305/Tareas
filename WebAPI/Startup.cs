@@ -1,10 +1,14 @@
 ﻿using System.Text;
+using AutoMapper;
+using EntityFramework;
 using EntityFramework.OperacionesBD;
 using Logica;
+using Logica.Profiles;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -39,12 +43,21 @@ namespace WebAPI
                 };
             });
 
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new TareaProfile());
+                mc.AddProfile(new UsuarioProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            services.AddDbContext<TareasDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("Postgres")));
+
             services.AddTransient<ILogicaTareas, LogicaTareas>();
             services.AddTransient<ILogicaUsuarios, LogicaUsuarios>();
             services.AddTransient<IOperacionesTareas, OperacionesTareas>();
             services.AddTransient<IOperacionesUsuarios, OperacionesUsuarios>();
-
-            services.AddTareasDbContext(Configuration.GetConnectionString("Postgres"));
 
             services.AddSwaggerGen(c =>
             {
@@ -76,7 +89,6 @@ namespace WebAPI
             });
 
             app.UseAuthentication();
-            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

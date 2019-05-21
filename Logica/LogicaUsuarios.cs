@@ -22,12 +22,22 @@ namespace Logica
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Función para loguearse el usuario
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
         public async Task<ObtenerUsuario> Loguin(LoginUsuario login)
         {
             try
             {
                 var usuario = (await _operaciones.EncontrarUsuario(u => u.User == login.User && u.Password == login.Password)).FirstOrDefault();
-                return _mapper.Map<ObtenerUsuario>(usuario);
+                if(usuario != null)
+                {
+                    return _mapper.Map<ObtenerUsuario>(usuario);
+                }
+
+                return null;
             }
             catch (Exception)
             {

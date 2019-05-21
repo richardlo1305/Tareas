@@ -15,3 +15,5 @@ C:\Repositorios\Tareas\EntityFramework\obj\Debug\netcoreapp2.1\EntityFramework.A
 C:\Repositorios\Tareas\EntityFramework\obj\Debug\netcoreapp2.1\EntityFramework.AssemblyInfo.cs
 C:\Repositorios\Tareas\EntityFramework\obj\Debug\netcoreapp2.1\EntityFramework.dll
 C:\Repositorios\Tareas\EntityFramework\obj\Debug\netcoreapp2.1\EntityFramework.pdb
+C:\Repositorios\Tareas\EntityFramework\bin\Debug\netcoreapp2.1\EntityFramework.runtimeconfig.json
+C:\Repositorios\Tareas\EntityFramework\bin\Debug\netcoreapp2.1\EntityFramework.runtimeconfig.dev.json

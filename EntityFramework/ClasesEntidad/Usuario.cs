@@ -1,12 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace EntityFramework.ClasesEntidad
+﻿namespace EntityFramework.ClasesEntidad
 {
     public class Usuario
     {
-        [Key]
         public int Codigo { get; set; }
-
         public string Identificacion { get; set; }
         public string Nombre { get; set; }
         public string Correo { get; set; }

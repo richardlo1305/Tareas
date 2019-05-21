@@ -119,8 +119,22 @@ namespace Logica
                 if (filtros.FiltroTodasTareas)
                 {
                     var obtenerTareas =  (await _operaciones.ObtenerTodo()).ToList();
-                    listaTareas.Lista = _mapper.Map<List<ObtenerTarea>>(obtenerTareas);
-                    return listaTareas;
+                    if (filtros.FiltroTareasPendientes)
+                    {
+                        var listaPendientes = obtenerTareas.Where(t => !t.Finalizada).ToList();
+                        listaTareas.Lista = _mapper.Map<List<ObtenerTarea>>(listaPendientes);
+                    }
+
+                    if (filtros.FiltroTareasFinalizadas)
+                    {
+                        var listaFinalizadas = obtenerTareas.Where(t => t.Finalizada).ToList();
+                        listaTareas.Lista = _mapper.Map<List<ObtenerTarea>>(listaFinalizadas);
+                    }
+
+                    if (filtros.OrdenarPorFechaVencimiento)
+                    {
+                        listaTareas.Lista.OrderBy(t => t.FechaVencimiento).ToList();
+                    }
                 }
 
                 if (filtros.FiltroMisTareas)
@@ -129,20 +143,20 @@ namespace Logica
 
                     if (filtros.FiltroTareasPendientes)
                     {
-                        var obtenerTareas = (await _operaciones.EncontrarTareas(t => !t.Finalizada && t.UsuarioRefId == usuarioLogueado.Codigo)).ToList();
+                        var obtenerTareas = (await _operaciones.EncontrarTareas(t => !t.Finalizada && t.UsuarioId == usuarioLogueado.Codigo)).ToList();
                         listaTareas.Lista = _mapper.Map<List<ObtenerTarea>>(obtenerTareas);
                     }
 
                     if (filtros.FiltroTareasFinalizadas)
                     {
-                        var obtenerTareas = (await _operaciones.EncontrarTareas(t => t.Finalizada && t.UsuarioRefId == usuarioLogueado.Codigo)).ToList();
+                        var obtenerTareas = (await _operaciones.EncontrarTareas(t => t.Finalizada && t.UsuarioId == usuarioLogueado.Codigo)).ToList();
                         listaTareas.Lista = _mapper.Map<List<ObtenerTarea>>(obtenerTareas);
                     }
-                }
 
-                if (filtros.OrdenarPorFechaVencimiento)
-                {
-                    listaTareas.Lista.OrderBy(t => t.FechaVencimiento).ToList();
+                    if (filtros.OrdenarPorFechaVencimiento)
+                    {
+                        listaTareas.Lista.OrderBy(t => t.FechaVencimiento).ToList();
+                    }
                 }
 
                 return listaTareas;

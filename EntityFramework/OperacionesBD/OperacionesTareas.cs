@@ -9,30 +9,32 @@ namespace EntityFramework.OperacionesBD
 {
     public class OperacionesTareas : IOperacionesTareas
     {
-        internal DbContext _context;
+        private TareasDbContext _context;
 
-        public OperacionesTareas(DbContext context)
+        public OperacionesTareas(TareasDbContext context)
         {
             _context = context;
         }
 
         public async Task<Tarea> ActualizarTarea(Tarea actualizarTarea)
         {
-            _context.Entry(actualizarTarea).State = EntityState.Modified;
-            return await Task.FromResult(actualizarTarea);
+            var entry = _context.Tarea.Update(actualizarTarea);
+            entry.State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return entry.Entity;
         }
 
         public async Task<Tarea> CrearTarea(Tarea crearTarea)
         {
-           return (await _context.Set<Tarea>().AddAsync(crearTarea)).Entity;
+            var entry = await _context.Tarea.AddAsync(crearTarea);
+            await _context.SaveChangesAsync();
+            return entry.Entity;
         }
 
         public async Task EliminarTarea(Tarea eliminarTarea)
         {
-            await Task.Factory.StartNew(() =>
-            {
-                _context.Set<Tarea>().Remove(eliminarTarea);
-            });  
+            _context.Tarea.Remove(eliminarTarea);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IQueryable<Tarea>> EncontrarTareas(Expression<Func<Tarea, bool>> expresion)
@@ -48,7 +50,7 @@ namespace EntityFramework.OperacionesBD
 
         public async Task<IQueryable<Tarea>> ObtenerTodo()
         {
-            IQueryable<Tarea> query = _context.Set<Tarea>();
+            IQueryable<Tarea> query = _context.Tarea;
             return await Task.FromResult(query);
         }
 

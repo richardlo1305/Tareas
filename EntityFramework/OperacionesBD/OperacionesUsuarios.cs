@@ -9,41 +9,34 @@ namespace EntityFramework.OperacionesBD
 {
     public class OperacionesUsuarios : IOperacionesUsuarios
     {
-        internal DbContext _context;
+        private TareasDbContext _context;
 
-        public OperacionesUsuarios(DbContext context)
+        public OperacionesUsuarios(TareasDbContext context)
         {
             _context = context;
         }
 
         public async Task ActualizarUsuario(Usuario actualizarUsuario)
         {
-            await Task.Factory.StartNew(() =>
-            {
-                _context.Entry(actualizarUsuario).State = EntityState.Modified;
-            });
-
+            _context.Usuario.Update(actualizarUsuario).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
         }
 
         public async Task CrearUsuario(Usuario crearUsuario)
         {
-            await Task.Factory.StartNew(() =>
-            {
-                _context.Set<Usuario>().Add(crearUsuario);
-            });
+            await _context.Usuario.AddAsync(crearUsuario);
+            await _context.SaveChangesAsync();
         }
 
         public async Task EliminarUsuario(Usuario eliminarUsuario)
         {
-            await Task.Factory.StartNew(() =>
-            {
-                _context.Set<Usuario>().Remove(eliminarUsuario);
-            });
+            _context.Usuario.Remove(eliminarUsuario);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IQueryable<Usuario>> EncontrarUsuario(Expression<Func<Usuario, bool>> expresion)
         {
-            IQueryable<Usuario> query = _context.Set<Usuario>().Where(expresion);
+            IQueryable<Usuario> query = _context.Usuario.Where(expresion);
             return await Task.FromResult(query);
         }
 
@@ -54,7 +47,7 @@ namespace EntityFramework.OperacionesBD
 
         public async Task<IQueryable<Usuario>> ObtenerTodo()
         {
-            IQueryable<Usuario> query = _context.Set<Usuario>();
+            IQueryable<Usuario> query = _context.Usuario;
             return await Task.FromResult(query);
         }
 
