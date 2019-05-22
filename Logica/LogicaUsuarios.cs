@@ -57,9 +57,8 @@ namespace Logica
                 ClaimsIdentity claims = new ClaimsIdentity("Login");
                 var jsonUserInfo = claims.Claims.FirstOrDefault().Value;
 
-                var login = JsonConvert.DeserializeObject<LoginUsuario>(jsonUserInfo);
-                var usuario = (await _operaciones.EncontrarUsuario(t => t.User == login.User)).FirstOrDefault();
-                return await Task.FromResult(_mapper.Map<ObtenerUsuario>(usuario));
+                var usuario = JsonConvert.DeserializeObject<ObtenerUsuario>(jsonUserInfo);
+                return await Task.FromResult(usuario);
             }
             catch (Exception e)
             {
