@@ -8,6 +8,7 @@ namespace WebAPI.Controllers
 {
     [Route("api/tareas")]
     [ApiController]
+    [Authorize]
     public class TareaController: ControllerBase
     {
         private readonly ILogicaTareas _logicaTareas;
