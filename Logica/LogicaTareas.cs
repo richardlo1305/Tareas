@@ -74,8 +74,10 @@ namespace Logica
         {
             try
             {
+                var usuarioLogueado = await _logicaUsuarios.ObtenerUsuarioLogueado();
+
                 var tareaBd = await _operaciones.ObtenerPorId(codigoTarea);
-                if(tareaBd != null)
+                if(tareaBd != null && tareaBd.UsuarioId == usuarioLogueado.Codigo)
                 {
                     await _operaciones.EliminarTarea(tareaBd);
                 }
@@ -87,7 +89,7 @@ namespace Logica
         }
 
         /// <summary>
-        /// Función para actualizar tarea
+        /// Función para actualizar tarea (unicamente el usuario que la creó)
         /// </summary>
         /// <param name="actualizarTarea">Tarea a actualizar</param>
         /// <returns>Retorna la tarea actualizada</returns>
@@ -95,8 +97,10 @@ namespace Logica
         {
             try
             {
+                var usuarioLogueado = await _logicaUsuarios.ObtenerUsuarioLogueado();
+
                 var tareaBd = await _operaciones.ObtenerPorId(actualizarTarea.Codigo);
-                if(tareaBd != null)
+                if(tareaBd != null && tareaBd.UsuarioId == usuarioLogueado.Codigo)
                 {
                     var tarea = _mapper.Map<Tarea>(actualizarTarea);
                     var tareaActualizada = await _operaciones.ActualizarTarea(tarea);
