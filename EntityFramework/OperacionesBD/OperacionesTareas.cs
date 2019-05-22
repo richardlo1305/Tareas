@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -48,10 +49,9 @@ namespace EntityFramework.OperacionesBD
             return (await EncontrarTareas(t => t.Codigo == codigoTarea)).FirstOrDefault(); ;
         }
 
-        public async Task<IQueryable<Tarea>> ObtenerTodo()
+        public async Task<List<Tarea>> ObtenerTodo()
         {
-            IQueryable<Tarea> query = _context.Tarea;
-            return await Task.FromResult(query);
+            return await _context.Tarea.ToListAsync();
         }
 
         public void Guardar()

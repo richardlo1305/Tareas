@@ -8,7 +8,6 @@ namespace WebAPI.Controllers
 {
     [Route("api/tareas")]
     [ApiController]
-    [Authorize]
     public class TareaController: ControllerBase
     {
         private readonly ILogicaTareas _logicaTareas;
@@ -19,35 +18,35 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("[action]")]
+        [Route("consultar")]
         public async Task<ListaTareas> Consultar([FromQuery] FiltrosTareas filtros)
         {
             return await _logicaTareas.ObtenerPorFiltro(filtros);
         }
 
         [HttpPost]
-        [Route("[action]")]
+        [Route("crear")]
         public async Task<ObtenerTarea> Crear([FromBody] CrearTarea crearTarea)
         {
             return await _logicaTareas.CrearTarea(crearTarea);
         }
 
         [HttpPost]
-        [Route("[action]")]
+        [Route("actualizar")]
         public async Task<ObtenerTarea> Actualizar([FromBody] ActualizarTarea ActualzarTarea)
         {
             return await _logicaTareas.ActualizarTarea(ActualzarTarea);
         }
 
         [HttpPost]
-        [Route("[action]")]
-        public async Task Borrar(int codigoTarea)
+        [Route("borrar")]
+        public async Task Borrar([FromQuery] int codigoTarea)
         {
             await _logicaTareas.EliminarTarea(codigoTarea);
         }
 
         [HttpGet]
-        [Route("[action]")]
+        [Route("obtenertodastareas")]
         public async Task<ListaTareas> ObtenerTodasTareas()
         {
             return await _logicaTareas.ObtenerTodasTareas();

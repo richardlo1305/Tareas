@@ -27,28 +27,28 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("[action]")]
+        [Route("crear")]
         public async Task<ObtenerUsuario> Crear([FromBody] CrearUsuario usuario)
         {
             return await _logicaUsuarios.CrearUsuario(usuario);
         }
 
         [HttpPost]
-        [Route("[action]")]
+        [Route("actualizar")]
         public async Task<ObtenerUsuario> Actualizar([FromBody] ActualizarUsuario usuario)
         {
             return await _logicaUsuarios.ActualizarUsuario(usuario);
         }
 
         [HttpPost]
-        [Route("[action]")]
-        public async Task Eliminar(int codigoUsuario)
+        [Route("eliminar")]
+        public async Task Eliminar([FromQuery] int codigoUsuario)
         {
             await _logicaUsuarios.EliminarUsuario(codigoUsuario);
         }
 
         [HttpPost]
-        [Route("[action]")]
+        [Route("login")]
         public async Task<IActionResult> Login([FromBody]LoginUsuario login)
         {
             IActionResult response = Unauthorized();

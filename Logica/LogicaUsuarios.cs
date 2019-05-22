@@ -39,8 +39,9 @@ namespace Logica
 
                 return null;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine("Excepcion : " + e.Message);
                 throw;
             }
         }
@@ -60,8 +61,9 @@ namespace Logica
                 var usuario = (await _operaciones.EncontrarUsuario(t => t.User == login.User)).FirstOrDefault();
                 return await Task.FromResult(_mapper.Map<ObtenerUsuario>(usuario));
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine("Excepcion : " + e.Message);
                 throw;
             }
         }
@@ -83,8 +85,9 @@ namespace Logica
                 }
                 return _mapper.Map<ObtenerUsuario>(usuario);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine("Excepcion : " + e.Message);
                 throw;
             }
         }
@@ -103,8 +106,9 @@ namespace Logica
                     await _operaciones.EliminarUsuario(usuarioBd);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine("Excepcion : " + e.Message);
                 throw;
             }
         }
@@ -126,8 +130,9 @@ namespace Logica
                 }
                 return _mapper.Map<ObtenerUsuario>(usuarioBd);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine("Excepcion : " + e.Message);
                 throw;
             }
         }

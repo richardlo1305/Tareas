@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -45,10 +46,9 @@ namespace EntityFramework.OperacionesBD
             return (await EncontrarUsuario(t => t.Codigo == codigoUsuario)).FirstOrDefault(); ;
         }
 
-        public async Task<IQueryable<Usuario>> ObtenerTodo()
+        public async Task<List<Usuario>> ObtenerTodo()
         {
-            IQueryable<Usuario> query = _context.Usuario;
-            return await Task.FromResult(query);
+            return await _context.Usuario.ToListAsync();
         }
 
         public void Guardar()

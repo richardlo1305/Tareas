@@ -33,7 +33,12 @@ namespace Logica
                 var listaTareas = new ListaTareas();
 
                 var obtenerTareas = await _operaciones.ObtenerTodo();
-                listaTareas.Lista = _mapper.Map<List<ObtenerTarea>>(obtenerTareas.ToList());
+                List<ObtenerTarea> listaObtenerTareas = new List<ObtenerTarea>();
+                foreach(var tarea in obtenerTareas)
+                {
+                    listaObtenerTareas.Add(_mapper.Map<ObtenerTarea>(tarea));
+                }
+                listaTareas.Lista = listaObtenerTareas;
                 return listaTareas;
             }
             catch(Exception)
@@ -118,45 +123,97 @@ namespace Logica
                
                 if (filtros.FiltroTodasTareas)
                 {
-                    var obtenerTareas =  (await _operaciones.ObtenerTodo()).ToList();
+                    var obtenerTareas =  await _operaciones.ObtenerTodo();
+                    
+                    if(!filtros.FiltroTareasPendientes && !filtros.FiltroTareasFinalizadas)
+                    {
+                        List<ObtenerTarea> listaInicialTareas = new List<ObtenerTarea>();
+                        foreach (var tarea in obtenerTareas)
+                        {
+                            listaInicialTareas.Add(_mapper.Map<ObtenerTarea>(tarea));
+                        }
+                        listaTareas.Lista = listaInicialTareas;
+                    }
+                    
                     if (filtros.FiltroTareasPendientes)
                     {
                         var listaPendientes = obtenerTareas.Where(t => !t.Finalizada).ToList();
-                        listaTareas.Lista = _mapper.Map<List<ObtenerTarea>>(listaPendientes);
+
+                        List<ObtenerTarea> listaObtenerTareas = new List<ObtenerTarea>();
+                        foreach (var tarea in listaPendientes)
+                        {
+                            listaObtenerTareas.Add(_mapper.Map<ObtenerTarea>(tarea));
+                        }
+
+                        listaTareas.Lista.AddRange(listaObtenerTareas);
                     }
 
                     if (filtros.FiltroTareasFinalizadas)
                     {
                         var listaFinalizadas = obtenerTareas.Where(t => t.Finalizada).ToList();
-                        listaTareas.Lista = _mapper.Map<List<ObtenerTarea>>(listaFinalizadas);
+
+                        List<ObtenerTarea> listaObtenerTareas = new List<ObtenerTarea>();
+                        foreach (var tarea in listaFinalizadas)
+                        {
+                            listaObtenerTareas.Add(_mapper.Map<ObtenerTarea>(tarea));
+                        }
+
+                        listaTareas.Lista.AddRange(listaObtenerTareas);
                     }
 
                     if (filtros.OrdenarPorFechaVencimiento)
                     {
-                        listaTareas.Lista.OrderBy(t => t.FechaVencimiento).ToList();
+                        listaTareas.Lista = listaTareas.Lista.OrderBy(t => t.FechaVencimiento).ToList();
                     }
+
+                    return listaTareas;
                 }
 
                 if (filtros.FiltroMisTareas)
                 {
                     var usuarioLogueado = await _logicaUsuarios.ObtenerUsuarioLogueado();
-
+                    if(!filtros.FiltroTareasPendientes && !filtros.FiltroTareasFinalizadas)
+                    {
+                        var obtenerLista = (await _operaciones.EncontrarTareas(t => t.UsuarioId == usuarioLogueado.Codigo)).ToList();
+                        List<ObtenerTarea> listaInicialTareas = new List<ObtenerTarea>();
+                        foreach (var tarea in obtenerLista)
+                        {
+                            listaInicialTareas.Add(_mapper.Map<ObtenerTarea>(tarea));
+                        }
+                        listaTareas.Lista = listaInicialTareas;
+                    }
+                    
                     if (filtros.FiltroTareasPendientes)
                     {
                         var obtenerTareas = (await _operaciones.EncontrarTareas(t => !t.Finalizada && t.UsuarioId == usuarioLogueado.Codigo)).ToList();
-                        listaTareas.Lista = _mapper.Map<List<ObtenerTarea>>(obtenerTareas);
+
+                        List<ObtenerTarea> listaObtenerTareas = new List<ObtenerTarea>();
+                        foreach (var tarea in obtenerTareas)
+                        {
+                            listaObtenerTareas.Add(_mapper.Map<ObtenerTarea>(tarea));
+                        }
+
+                        listaTareas.Lista.AddRange(listaObtenerTareas);
                     }
 
                     if (filtros.FiltroTareasFinalizadas)
                     {
                         var obtenerTareas = (await _operaciones.EncontrarTareas(t => t.Finalizada && t.UsuarioId == usuarioLogueado.Codigo)).ToList();
-                        listaTareas.Lista = _mapper.Map<List<ObtenerTarea>>(obtenerTareas);
+
+                        List<ObtenerTarea> listaObtenerTareas = new List<ObtenerTarea>();
+                        foreach (var tarea in obtenerTareas)
+                        {
+                            listaObtenerTareas.Add(_mapper.Map<ObtenerTarea>(tarea));
+                        }
+                        listaTareas.Lista.AddRange(listaObtenerTareas);
                     }
 
                     if (filtros.OrdenarPorFechaVencimiento)
                     {
-                        listaTareas.Lista.OrderBy(t => t.FechaVencimiento).ToList();
+                        listaTareas.Lista = listaTareas.Lista.OrderBy(t => t.FechaVencimiento).ToList();
                     }
+
+                    return listaTareas;
                 }
 
                 return listaTareas;
