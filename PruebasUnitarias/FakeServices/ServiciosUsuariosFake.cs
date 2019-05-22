@@ -24,26 +24,35 @@ namespace PruebasUnitarias.FakeServices
 
         public async Task<ObtenerUsuario> ActualizarUsuario(ActualizarUsuario actualizarUsuario)
         {
-            var usuario = new Usuario
+            var usuario = dbContext.Usuario.Where(t => t.Codigo == actualizarUsuario.Codigo).FirstOrDefault();
+            if(usuario != null)
             {
-                Codigo = actualizarUsuario.Codigo,
-                Correo = actualizarUsuario.Correo,
-                Identificacion = actualizarUsuario.Identificacion,
-                Nombre = actualizarUsuario.Nombre,
-                Password = actualizarUsuario.Password,
-                User = actualizarUsuario.User
-            };
-            var entry = dbContext.Usuario.Update(usuario);
-            try
-            {
-                await dbContext.SaveChangesAsync();
-                var entidad = entry.Entity;
-                return new ObtenerUsuario {  Codigo = entidad.Codigo, Correo = entidad.Correo, Identificacion = entidad.Identificacion, Nombre = entidad.Nombre, Password = entidad.Password, User = entidad.User};
+                var usuarioCrear = new Usuario
+                {
+                    Codigo = actualizarUsuario.Codigo,
+                    Correo = actualizarUsuario.Correo,
+                    Identificacion = actualizarUsuario.Identificacion,
+                    Nombre = actualizarUsuario.Nombre,
+                    Password = actualizarUsuario.Password,
+                    User = actualizarUsuario.User
+                };
+                var entry = dbContext.Usuario.Update(usuario);
+                try
+                {
+                    await dbContext.SaveChangesAsync();
+                    var entidad = entry.Entity;
+                    return new ObtenerUsuario { Codigo = entidad.Codigo, Correo = entidad.Correo, Identificacion = entidad.Identificacion, Nombre = entidad.Nombre, Password = entidad.Password, User = entidad.User };
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
-            catch (Exception)
+            else
             {
-                throw;
+                throw new Exception();
             }
+           
         }
 
         public async Task<ObtenerUsuario> CrearUsuario(CrearUsuario crearUsuario)
@@ -100,7 +109,8 @@ namespace PruebasUnitarias.FakeServices
                 var obtenerUsuario = new ObtenerUsuario { Codigo = usuario.Codigo, Correo = usuario.Correo, Identificacion = usuario.Identificacion, Nombre = usuario.Nombre, Password = usuario.Password, User = usuario.User };
                 return await Task.FromResult(obtenerUsuario);
             }
-            return null;
+
+            throw new Exception();
         }
 
         public Task<ObtenerUsuario> ObtenerUsuarioLogueado()

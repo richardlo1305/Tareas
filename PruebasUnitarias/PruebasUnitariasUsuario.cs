@@ -35,7 +35,7 @@ namespace PruebasUnitarias
                  Password = "123456",
                  User = "rodolfo"
             };
-            var response = controlador.Crear(usuario);
+            var response = controlador.Crear(usuario).Result;
             Assert.IsInstanceOfType(response, typeof(ObtenerUsuario));
         }
 
@@ -44,7 +44,38 @@ namespace PruebasUnitarias
         {
             var controlador = new UsuarioController(serviciosUsuarios, configuration);
             var response = controlador.Eliminar(1);
-            Assert.IsInstanceOfType(response, typeof(Exception));
+            Assert.IsNotInstanceOfType(response, typeof(Exception));
+        }
+
+        [TestMethod]
+        public void ActualizarUsuarioOk()
+        {
+            var controlador = new UsuarioController(serviciosUsuarios, configuration);
+            var usuarioActualizar = new ActualizarUsuario
+            {
+                Codigo = 1,
+                Correo = "rodolfo@unillanos.edu.co",
+                Identificacion = "100456785",
+                Nombre = "Rodolfo",
+                Password = "123456",
+                User = "rodolfo"
+            };
+
+            var response = controlador.Actualizar(usuarioActualizar).Result;
+            Assert.IsNotInstanceOfType(response, typeof(Exception));
+        }
+
+        [TestMethod]
+        public void LoginUsuarioOk()
+        {
+            var controlador = new UsuarioController(serviciosUsuarios, configuration);
+            var usuarioLogin = new LoginUsuario
+            {
+                User = "jorge",
+                Password = "123456"
+            };
+            var response = controlador.Login(usuarioLogin);
+            Assert.IsNotInstanceOfType(response, typeof(Exception));
         }
     }
 }

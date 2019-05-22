@@ -12,3 +12,12 @@ C:\Repositorios\Tareas\PruebasUnitarias\obj\Debug\netcoreapp2.1\PruebasUnitarias
 C:\Repositorios\Tareas\PruebasUnitarias\obj\Debug\netcoreapp2.1\PruebasUnitarias.AssemblyInfo.cs
 C:\Repositorios\Tareas\PruebasUnitarias\obj\Debug\netcoreapp2.1\PruebasUnitarias.dll
 C:\Repositorios\Tareas\PruebasUnitarias\obj\Debug\netcoreapp2.1\PruebasUnitarias.pdb
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\EntityFramework.dll
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\Logica.dll
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\Modelos.dll
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\WebAPI.dll
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\Logica.pdb
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\WebAPI.pdb
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\EntityFramework.pdb
+C:\Repositorios\Tareas\PruebasUnitarias\bin\Debug\netcoreapp2.1\Modelos.pdb
+C:\Repositorios\Tareas\PruebasUnitarias\obj\Debug\netcoreapp2.1\PruebasUnitarias.csproj.CopyComplete
